@@ -10,10 +10,11 @@ import           Language.Haskell.LSP.Types
 import           Language.Haskell.LSP.Types.Lens as LSP
 import           Language.Haskell.LSP.Types.Capabilities as LSP
 
-digestif_cmd = "digestif"
+digestif_cmd = "digestif -v"
 fixtures = "spec/fixtures"
 
-mySession = runSession digestif_cmd fullCaps fixtures
+myConfig = SessionConfig 60 True False True Nothing
+mySession = runSessionWithConfig myConfig digestif_cmd fullCaps fixtures
 
 main = hspec $ do
   describe "textDocument/completion" $ do

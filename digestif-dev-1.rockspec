@@ -17,7 +17,7 @@ description = {
 dependencies = {
   "lua >= 5.3",
   "lpeg >= 1.0",
-  "dkjson >= 2.5",
+  "lua-cjson >= 2.1.0.6"
 }
 build = {
   type = "builtin",

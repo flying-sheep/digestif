@@ -1,6 +1,6 @@
 local Cache = require "digestif.Cache"
 local config = require "digestif.config"
-local json = require "dkjson"
+local json = require "cjson"; json.encode_empty_table_as_object(false)
 local util = require "digestif.util"
 
 local log, nested_get = util.log, util.nested_get
